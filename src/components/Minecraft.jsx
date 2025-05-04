@@ -14,8 +14,12 @@ function Minecraft() {
     useEffect(() => {
         
 
-        let ans = x;
-        ans = ans * y + Number(z);
+        let plotis = x;
+        let aukstis = y;
+        let ilgis = z;
+        let ans = 0;
+
+        ans = (2 * (plotis * aukstis) + 2 * (ilgis * aukstis) + 2 * (ilgis * plotis)) - 2;
 
         setAnswer(ans)
 
@@ -25,17 +29,20 @@ function Minecraft() {
 
   return (
     <>
+      <div className="ml-3">
+        <p>Minecraft namo reikiamų blokų skaičiuotuvas (vienablokės durys atskaičiuotos)</p>
+      </div>
       <div className="p-5">
         <div>
-          <label htmlFor="X">X</label>
+          <label className="mr-5" htmlFor="X">Plotis</label>
           <input type="number" name="X" id="X" value={x} onChange={(e) => [setX(e.target.value)]}/>
         </div>
         <div>
-          <label htmlFor="Y">Y</label>
+          <label className="mr-5" htmlFor="Y">Aukštis</label>
           <input type="number" name="Y" id="Y" value={y} onChange={(e) => [setY(e.target.value)]}/>
         </div>
         <div>
-          <label htmlFor="Z">Z</label>
+          <label className="mr-5" htmlFor="Z">Ilgis</label>
           <input type="number" name="Z" id="Z" value={z} onChange={(e) => [setZ(e.target.value)]}/>
         </div>
       </div>
